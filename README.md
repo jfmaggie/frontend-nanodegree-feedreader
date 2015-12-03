@@ -26,11 +26,11 @@ You will learn how to use Jasmine to write a number of tests against a pre-exist
 1. :heavy_check_mark: Download the [required project assets](http://github.com/udacity/frontend-nanodegree-feedreader).
 2. :heavy_check_mark: Review the functionality of the application within your browser.
 3. :heavy_check_mark: Explore the application's HTML (*./index.html*), CSS (*./css/style.css*) and JavaScript (*./js/app.js*) to gain an understanding of how it works.
-4. Explore the Jasmine spec file in *./jasmine/spec/feedreader.js*
-5. Edit the allFeeds variable in *./js/app.js* to make the provided test fail and see how Jasmine visualizes this failure in your application.
-6. Return the allFeeds variable to a passing state.
-7. Write a test that loops through each feed in the allFeeds object and ensures it has a URL defined and that the URL is not empty.
-8. Write a test that loops through each feed in the allFeeds object and ensures it has a name defined and that the name is not empty.
+4. :heavy_check_mark: Explore the Jasmine spec file in *./jasmine/spec/feedreader.js*
+5. :heavy_check_mark: Edit the allFeeds variable in *./js/app.js* to make the provided test fail and see how Jasmine visualizes this failure in your application.
+6. :heavy_check_mark: Return the allFeeds variable to a passing state.
+7. :heavy_check_mark: Write a test that loops through each feed in the allFeeds object and ensures it has a URL defined and that the URL is not empty.
+8. :heavy_check_mark: Write a test that loops through each feed in the allFeeds object and ensures it has a name defined and that the name is not empty.
 9. Write a new test suite named "The menu".
 10. Write a test that ensures the menu element is hidden by default. You'll have to analyze the HTML and the CSS to determine how we're performing the hiding/showing of the menu element.
 11. Write a test that ensures the menu changes visibility when the menu icon is clicked. This test should have two expectations: does the menu display when clicked and does it hide when clicked again.
