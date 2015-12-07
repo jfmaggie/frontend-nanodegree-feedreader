@@ -86,6 +86,17 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test wil require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+         beforeEach(function(done) {
+            loadFeed(0);
+            setTimeout(function() {
+                done();
+            }, 2000);
+         });
+
+         it('has at least a single entry element', function(done) {
+            expect($('.feed > a.entry-link').length).not.toBe(0);
+            done();
+         });
     });
 
 
@@ -95,5 +106,20 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+         beforeEach(function(done) {
+            loadFeed(0);
+            setTimeout(function() {
+                done();
+            }, 2000);
+         });
+
+         it('changes the content', function(done) {
+            var beforeClicked = $('.entry > h2').first().text();
+            loadFeed(1);
+            setTimeout(function() {
+                expect($('.entry > h2').first().text()).not.toBe(beforeClicked);
+                done();
+            }, 2000);
+         });
     });
 }());
