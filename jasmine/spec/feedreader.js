@@ -30,9 +30,9 @@ $(function() {
          * and that the URL is not empty.
          */
         it('URLs are defined', function() {
-            allFeeds.forEach(function(eachFeed) {
-                expect(eachFeed.url).toBeDefined();
-                expect(eachFeed.url.length).not.toBe(0);
+            allFeeds.forEach(function(feed) {
+                expect(feed.url).toBeDefined();
+                expect(feed.url.length).not.toBe(0);
             });
         });
 
@@ -42,9 +42,9 @@ $(function() {
          * and that the name is not empty.
          */
         it('Names are defined', function() {
-            allFeeds.forEach(function(eachFeed) {
-                expect(eachFeed.name).toBeDefined();
-                expect(eachFeed.length).not.toBe(0);
+            allFeeds.forEach(function(feed) {
+                expect(feed.name).toBeDefined();
+                expect(feed.length).not.toBe(0);
             });
         });
     });
@@ -86,9 +86,8 @@ $(function() {
             loadFeed(0, done);
         });
 
-        it('has at least a single entry element', function(done) {
+        it('has at least a single entry element', function() {
             expect($('.feed .entry').length).not.toBe(0);
-            done();
         });
     });
 
@@ -103,13 +102,16 @@ $(function() {
         beforeEach(function(done) {
             loadFeed(0, function() {
                 beforeClicked = $('.entry > h2').first().text();
+                loadFeed(1,done);
             });
-            loadFeed(1, done);
         });
+
 
         it('changes the content', function(done) {
             expect($('.entry > h2').first().text()).not.toBe(beforeClicked);
+            console.log(beforeClicked);
             done();
         });
+
     });
 }());
