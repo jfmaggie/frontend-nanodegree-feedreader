@@ -99,19 +99,25 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
         var beforeClicked;
+        var originalTimeout;
         beforeEach(function(done) {
+            originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+            jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+
             loadFeed(0, function() {
                 beforeClicked = $('.entry > h2').first().text();
                 loadFeed(1,done);
             });
         });
 
-
         it('changes the content', function(done) {
             expect($('.entry > h2').first().text()).not.toBe(beforeClicked);
-            console.log(beforeClicked);
             done();
         });
 
+        afterEach(function(done) {
+            jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+            done();
+        });
     });
 }());
